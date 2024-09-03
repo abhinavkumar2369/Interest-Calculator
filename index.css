@@ -1,218 +1,112 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
     min-height: 100vh;
-    min-width: 100vw;
-    overflow: hidden;
-    margin: 0px;
-    padding: 0px;
-    font: 16px;
-    font-family: "Roboto", sans-serif;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #e5dede;
+    background: linear-gradient(135deg, #00416A, #E4E5E6);
+    padding: 20px;
 }
 
-
-
-
-
-
-/* ------ Box Sizing Property ------ */
-*,
-*::before,
-*::after {
-  box-sizing: border-box !important;
-}
-
-
-main{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 80%;
-    max-width: 700px;
-    
-    /* box-shadow: 0px 0px 10px 0px #f41010; */
-}
-
-
-
-
-
-
-
-
-/* ----------------- Head Section ---------------*/
-
-.head{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: darkblue;
+.calculator {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     width: 100%;
-    padding: 25px;
-    border-radius: 15px 15px 0px 0px;
-    color: #fff4f4;
+    max-width: 450px;
 }
 
-/* --- Loan Calculator Heading ---*/
-.head > h2{
-    width: 100%;
-    margin: 0px;
-    word-spacing: 5px;
-    letter-spacing: 0.6px;
-    font-weight: 600;
+.calculator h2 {
+    text-align: center;
+    color: #00416A;
+    margin-bottom: 25px;
     font-size: 1.8rem;
-    padding: 5px 0px;
 }
 
-.head > div{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 5px 0px ;
+.input-group {
+    margin-bottom: 1.5rem;
 }
 
-/* --- Input Box ---*/
-.input-box{
-    max-width: 30%;
-    display: flex;
-    flex-direction: column;
-}
-
-.input-box .sub-heading-1{
-    padding: 15px 0px 5px;
-    letter-spacing: 0.3px;
-    word-spacing: 3px;
-    font-size: 0.95rem;
-}
-
-.input-box input{
-    padding: 8px 15px;
-    border: 0px;
-    border-radius: 3px;
-    outline: none;
-}
-
-
-
-
-
-
-/* ----------------- Bottom -------------------*/
-.bottom{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 25px 25px 25px;
-    border-radius: 0px 0px 15px 15px; 
-    background-color: white;
-}
-
-
-/* ---- Left Side ----*/
-.output{
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-}
-
-.output > span{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.output > span .sub-heading-1{
-    color: black;
-    padding: 5px 0px 5px;
-    letter-spacing: 0.3px;
-    word-spacing: 3px;
-    font-size: 0.95rem;
-}
-.output > span span:nth-child(2){
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-.bottom .hr{
-    width: 80%;
-    margin: 5px 0px;
-}
-.bottom .hr hr{
-    width: 100%;
-    border: 1px solid #5c5c5c;
-}
-
-
-
-.output button{
-    margin-top: 20px;
-    padding: 8px 15px;
-    border: 0px;
-    border-radius: 6px;
-    background-color: #f41010;
-    color: white;
-    font-size: 1.1rem;
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
     font-weight: 500;
-    letter-spacing: 0.3px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #00416A;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #00416A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-
-/* ---- Right Side ----*/
-.graph{
-    width: 45%;
+button:hover {
+    background: #002d4a;
 }
 
+.result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    display: none;
+}
 
-@media screen and (max-width: 578px){
-    body{
-        display: block;
-        margin: 0px;
+.result h3 {
+    color: #00416A;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.result p {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+}
+
+.result span {
+    font-weight: 600;
+    color: #00416A;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        padding: 1.5rem;
     }
-    main{
-        min-height: 100vh !important;
-        width: 100%;
-        margin: auto !important;
-        display: block;
+
+    .calculator h2 {
+        font-size: 1.5rem;
     }
-    main .head{
-        border-radius: 0px;
-    }
-    main .head h2{
-        font-size: 2.0rem;
-        word-spacing: 8px;
-    }
-    .head>div{
-        width: 100%;
-        align-items: flex-end;
-        flex-wrap: wrap;
-    }
-    .head>div>span{
-        width: 50% !important;
-    }
-    .output{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .output > span{
-        width: 45%;
+
+    .input-group input {
+        padding: 10px;
     }
 }
